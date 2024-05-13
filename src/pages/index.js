@@ -1,31 +1,24 @@
-
-import Navigation from '@/components/Navigation'
-import styles from '@/styles/Home.module.css'
-import { useState } from 'react';
+// Home.js
+import React from 'react';
 import useEvents from '@/data/events';
+import styles from '@/styles/Home.module.css';
 
+const Home = ({ onSelectCharacter }) => {
+  const { data, isLoading, isError } = useEvents();
 
-export default function Home(){
-  console.log(useEvents)
-  const { data, isLoading, isError } = useEvents()
- 
-  if (isLoading) return <div>Loading...</div>
-  if (isError) return <div>Error</div>
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
 
-  console.log(data);
-
-  return (<div>
-    {data.data.results.map(event => {
-      return <div key={event.id}>
-        <h2>{event.title}</h2>
-        <div>
-          {event.characters.items.map(character => {
-            return <div key={character.resourceURI}>
-              <h3>{character.name}</h3>
-            </div>
-          })}
+  return (
+    <div className={styles.main}> 
+      <h1>Evenementen</h1>
+      {data.data.results.map(event => (
+        <div key={event.id} onClick={() => onSelectCharacter(event)}>
+          <h2>{event.title}</h2>
         </div>
-      </div>
-    })}
-  </div>)
-}
+      ))}
+    </div>
+  );
+};
+
+export default Home;
