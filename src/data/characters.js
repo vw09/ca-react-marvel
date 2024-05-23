@@ -1,15 +1,13 @@
+import fetcher from "./_fetcher"
+import useSWR from "swr"
+import {apiKey} from "../secret"
 
-import React from 'react';
-
-const CharacterDetail = ({ character }) => {
-  return (
-    <div>
-      <h2>Character Details</h2>
-      <p>Name: {character.name}</p>
-      <p>Description: {character.description}</p>
-      {/* Voeg hier de andere details van het personage toe */}
-    </div>
-  );
-};
-
-export default CharacterDetail;
+export default function useCharacter () {
+    const { data, error, isLoading } = useSWR(`https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}`, fetcher)
+   
+    return {
+      data,
+      isLoading,
+      isError: error
+    }
+  }
