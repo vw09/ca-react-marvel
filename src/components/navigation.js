@@ -1,7 +1,9 @@
+// src/components/BottomNavigation.js
 import React from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { Home, Event, Info } from '@mui/icons-material';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import styles from '@/styles/Navigation.module.css';
 
 const BottomNav = () => {
   const [value, setValue] = React.useState(0);
@@ -17,7 +19,7 @@ const BottomNav = () => {
         router.push('/events');
         break;
       case 2:
-        router.push('/about');
+        router.push('characters');
         break;
       default:
         break;
@@ -25,10 +27,15 @@ const BottomNav = () => {
   };
 
   return (
-    <BottomNavigation value={value} onChange={handleNavigation} showLabels>
+    <BottomNavigation
+      value={value}
+      onChange={handleNavigation}
+      showLabels
+      className={styles.bottomNav}
+    >
       <BottomNavigationAction label="Home" icon={<Home />} />
       <BottomNavigationAction label="Events" icon={<Event />} />
-      <BottomNavigationAction label="About" icon={<Info />} />
+      <BottomNavigationAction label="characters" icon={<characters/>} />
     </BottomNavigation>
   );
 };

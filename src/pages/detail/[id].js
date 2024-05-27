@@ -1,5 +1,5 @@
 import React from 'react';
-import useEvents from '@/data/events';
+
 import styles from '@/styles/Home.module.css';
 import { useRouter } from 'next/router'
 import useEvent from '@/data/event';
@@ -15,7 +15,7 @@ console.log(data)
 
   return (
     <div>
-      <h1>This is Index {router.query.id}</h1>
+      <h1>{data.data.results[0].title}</h1>
  <p>{data.data.results[0].description}</p>
   <div>{data.data.results[0].characters.items.map(char => {
     return (<div key={char.resourceURI}>{char.name}</div>)
