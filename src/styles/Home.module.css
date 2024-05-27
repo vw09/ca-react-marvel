@@ -31,10 +31,15 @@
 
 .ballsContainer {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* Bollen aan de rechterkant */
-  margin-right: 20px; /* Ruimte tussen bollen en tekst */
 }
+
+.line {
+  position: absolute;
+  width: 2px; /* Breedte van de staafjes */
+  background-color: white; /* Kleur van de staafjes */
+  z-index: 1; /* Plaats de staafjes achter de bollen */
+}
+
 
 .ball {
   width: 30px; /* Aangepaste breedte */

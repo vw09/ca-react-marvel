@@ -1,12 +1,14 @@
 import React from 'react';
 import useEvents from '@/data/events';
 import styles from '@/styles/Home.module.css';
+import { useRouter } from 'next/router'
 
 const Home = () => {
+  const router = useRouter()
   const { data, isLoading, isError } = useEvents();
 
   const onSelectEvent = (event) => {
-    alert(`Geselecteerd evenement: ${event.title}\nBeschrijving: ${event.description}`);
+    router.push(`detail/${event.id}`)
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -28,17 +30,15 @@ const Home = () => {
 
   return (
     <div className={styles.main}>
-       <h1>The Chronicles of Marvel</h1> {/* Titel */}
+      <h1>The Chronicles of Marvel</h1>
       <div className={styles.container}>
-        <div className={styles.ballsContainer}>
-          {allItems.map((item, index) => (
-            <div key={item.id || index} className={styles.ball}></div>
-          ))}
-        </div>
         <div className={styles.eventsContainer}>
           {eventsToShow.map(event => (
-            <div key={event.id} onClick={() => onSelectEvent(event)} className={styles.event}>
-              <h2>{event.title}</h2>
+            <div key={event.id} className={styles.ballsContainer}>
+              <div className={styles.ball}></div>
+              <div onClick={() => onSelectEvent(event)} className={styles.event}>
+                <h2>{event.title}</h2>
+              </div>
             </div>
           ))}
         </div>
