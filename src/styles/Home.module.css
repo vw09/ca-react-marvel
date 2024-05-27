@@ -9,8 +9,6 @@
   min-height: 100vh;
 }
 
-/* Home.module.css */
-/* Home.module.css */
 .main {
   display: flex;
   align-items: flex-start;
@@ -33,18 +31,11 @@
   display: flex;
 }
 
-.line {
-  position: absolute;
-  width: 2px; /* Breedte van de staafjes */
-  background-color: white; /* Kleur van de staafjes */
-  z-index: 1; /* Plaats de staafjes achter de bollen */
-}
-
-
 .ball {
-  width: 30px; /* Aangepaste breedte */
-  height: 30px; /* Aangepaste hoogte */
-  background-color: white;
+  width: 40px; /* Aangepaste breedte */
+  height: 40px; /* Aangepaste hoogte */
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.9); /* Vergroot de gloedintensiteit */
   margin-bottom: 20px; /* Meer ruimte tussen de bollen */
@@ -54,7 +45,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Tekst aan de linkerkant */
-  margin-left: 20px; /* Ruimte tussen tekst en bollen */
 }
 
 .event {
@@ -65,11 +55,8 @@
 .event h2 {
   margin: 0;
   font-size: 1.5em;
+  color:white;
 }
-
-
-
-
 
 .description {
   display: inherit;
