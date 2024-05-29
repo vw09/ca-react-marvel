@@ -7,9 +7,8 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-}
-.body{
-background: url("/background.png");
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .main {
@@ -19,10 +18,11 @@ background: url("/background.png");
 }
 
 .main h1 {
-  margin: 50px; /* Voeg meer ruimte toe boven de titel */
+  margin: 40px; /* Voeg meer ruimte toe boven de titel */
   font-size: 2.5em; 
   color: white;
-}
+  font-family: 'Bebas Neue', cursive;
+};
 
 .container {
   display: flex;
@@ -30,18 +30,35 @@ background: url("/background.png");
   flex: 1; /* Nodig om elementen uit te rekken */
 }
 
+
 .ballsContainer {
   display: flex;
 }
 
 .ball {
-  width: 40px; /* Aangepaste breedte */
-  height: 40px; /* Aangepaste hoogte */
+  width: 50px; 
+  height: 50px; 
   margin-right: 10px;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.9); /* Vergroot de gloedintensiteit */
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9); /* Toevoegen van een gloed rond de ballen */
   margin-bottom: 20px; /* Meer ruimte tussen de bollen */
+  position: relative; /* Maakt positie relatief voor het positioneren van het pseudo-element */
+}
+
+.ball::before {
+  content: ""; /* Voeg inhoud toe aan het pseudo-element */
+  position: absolute; /* Absoluut positioneren ten opzichte van de bal */
+  width: 10px; /* Breedte van het verbindingsstaafje */
+  height: 70px; /* Hoogte van het verbindingsstaafje */
+  background-color: rgba(255, 255, 255, 0.9); /* Kleur van het verbindingsstaafje */
+  top: calc(100% + 5px); /* Afstand vanaf de bovenkant van de bal */
+  left: calc(50% - 5px); /* Plaats het in het midden van de bal */
+}
+
+/* Verberg het verbindingsstaafje voor de laatste bal */
+.ball:last-child::before {
+  display: none;
 }
 
 .eventsContainer {
@@ -51,6 +68,7 @@ background: url("/background.png");
 }
 
 .event {
+  margin-top: 10px;
   margin-bottom: 20px;
   cursor: pointer;
 }
