@@ -4,7 +4,40 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: left;
+  padding: 6rem;
+  min-height: 100vh;
+  color: white;
+}
+
+.main {
+  background: url("/background.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  color: white; /* Zorg dat tekst wit is om zichtbaar te zijn op de achtergrond */
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.backButton {
+  position: absolute;
+  top: 20px; /* Afstand van de bovenkant */
+  left: 20px; /* Afstand van de linkerkant */
+  padding: 10px 20px;
+  background-color: #000099; /* Blauwe achtergrondkleur */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

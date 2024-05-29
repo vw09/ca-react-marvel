@@ -7,6 +7,6 @@
   right: 0;
 }
 
-.bottomNav .MuiBottomNavigationAction-root .MuiSvgIcon-root {
+.bottomNav .MuiSvgIcon-root {
   fill: white; /* Kleur van de iconen */
 }

@@ -16,6 +16,9 @@ console.log(data)
 
   return (
     <div className={styles.main}>
+      <button className={styles.backButton} onClick={() => router.back()}>
+        Terug
+      </button>
       <h1>{data.data.results[0].title}</h1>
  <p>{data.data.results[0].description}</p>
   <div>{data.data.results[0].characters.items.map(char => {
