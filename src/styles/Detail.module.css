@@ -29,9 +29,8 @@
   padding: 20px;
   background-color: #000099; /* Donkere achtergrondkleur met doorzichtigheid */
   border-radius: 10px;
-  width: 100%;
-  max-width: 800px;
-  font-size: 1em;
+  width: 90vw; /* 100% van de viewport breedte */
+  max-width: 1000px; /* Optioneel: voeg een maximale breedte toe als je dat wilt */
 }
 
 .descriptionTitle, .charactersTitle {
