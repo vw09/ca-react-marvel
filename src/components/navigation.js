@@ -1,7 +1,7 @@
 // src/components/BottomNavigation.js
 import React from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
-import { Home, Event, Info } from '@mui/icons-material';
+import { Home, PeopleAlt } from '@mui/icons-material'; // Importeer de benodigde iconen
 import { useRouter } from 'next/router';
 import styles from '@/styles/Navigation.module.css';
 
@@ -16,10 +16,7 @@ const BottomNav = () => {
         router.push('/');
         break;
       case 1:
-        router.push('/events');
-        break;
-      case 2:
-        router.push('characters');
+        router.push('/characters');
         break;
       default:
         break;
@@ -33,9 +30,8 @@ const BottomNav = () => {
       showLabels
       className={styles.bottomNav}
     >
-      <BottomNavigationAction label="Home" icon={<Home />} />
-      <BottomNavigationAction label="Events" icon={<Event />} />
-      <BottomNavigationAction label="characters" icon={<characters/>} />
+      <BottomNavigationAction label="Home" icon={<Home />} style={{ color: 'white' }} />
+      <BottomNavigationAction label="Characters" icon={<PeopleAlt />} style={{ color: 'white' }} /> {/* Toegevoegde link naar "Characters" */}
     </BottomNavigation>
   );
 };
