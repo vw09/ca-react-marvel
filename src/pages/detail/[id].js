@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import useEvent from '@/data/event';
 import styles from '@/styles/Detail.module.css';
 
+
 const Index2 = () => {
   const router = useRouter();
   const { data, isLoading, isError } = useEvent(router.query.id);

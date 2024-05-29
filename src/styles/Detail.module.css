@@ -1,22 +1,22 @@
 .main {
-  background: url("/background.png");
+  background: url("/background2.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
-  color: white; /* Zorg dat tekst wit is om zichtbaar te zijn op de achtergrond */
-  position: relative; /* Maakt absolute positionering van de knop mogelijk */
+  color: white;
+  position: relative;
   font-family: 'Roboto', sans-serif;
 }
 
 .backButton {
   position: absolute;
-  top: 20px; /* Afstand van de bovenkant */
-  left: 20px; /* Afstand van de linkerkant */
+  top: 20px;
+  left: 20px;
   padding: 10px 20px;
-  background-color: #000099; /* Blauwe achtergrondkleur */
+  background-color: #ff0000; /* Rode achtergrondkleur voor Marvel */
   color: white;
   border: none;
   border-radius: 5px;
@@ -25,18 +25,27 @@
 }
 
 .descriptionBlock, .charactersBlock {
-  margin-top: 20px;
+  margin-top: 70px;
   padding: 20px;
-  background-color: #000099; /* Donkere achtergrondkleur met doorzichtigheid */
+  background-color: rgba(0, 0, 0, 0.8); /* Donkere achtergrond met doorzichtigheid */
   border-radius: 10px;
-  width: 90vw; /* 100% van de viewport breedte */
-  max-width: 1000px; /* Optioneel: voeg een maximale breedte toe als je dat wilt */
+  width: 90vw;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Schaduw voor diepte */
 }
 
 .descriptionTitle, .charactersTitle {
   margin: 0 0 10px;
   font-size: 1.5em;
-  color: white;
+  color: #ffffff; /* Marvel rood voor de titels */
   font-family: 'Bebas Neue', cursive;
+  border-bottom: 2px solid #ff0000; /* Rode onderstreep voor titels */
+  padding-bottom: 5px;
 }
 
+.charactersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center; /* Center de characters in het blok */
+}
