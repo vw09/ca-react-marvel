@@ -1,23 +1,35 @@
 // Importeer de benodigde modules
 import React from 'react';
-import useCharacter from '@/path/to/useCharacter';
+import useCharacter from '../data/events3';
 import styles from '@/styles/Home.module.css';
+import { useRouter } from 'next/router';
 
-// Definieer de component
-const CharacterDetailPage = () => {
-  // TODO: Haal de characterid op uit de query parameters met useRouter
-  const { data, isLoading, isError } = useCharacter(characterid);
+const CharacterDetail = () => {
+  const router = useRouter();
+  const { id } = router.query;
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
+  if (!id) {
+    return <div>Loading...</div>;
+  }
 
+  // Gebruik de useCharacter-hook met het personage-id
+  const { data, isLoading, isError } = usecharacter(id);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error</div>;
+  }
+
+  // Render de inhoud op basis van de gegevens
   return (
     <div className={styles.main}>
-      <h1>{data.name}</h1>
-      {/* Voeg andere details van het character toe */}
+      <h1>{data?.name}</h1>
+      {/* Render andere details van het personage */}
     </div>
   );
 };
 
-// Exporteer de component
-export default CharacterDetailPage;
+export default CharacterDetail;
