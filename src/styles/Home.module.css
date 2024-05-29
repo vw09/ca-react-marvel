@@ -1,6 +1,6 @@
 .main {
- background: url("/background3.png");
- background-size:contain;
+  background: url("/background3.png");
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,9 +16,9 @@
 .main h1 {
   margin: 40px; /* Voeg meer ruimte toe boven de titel */
   font-size: 3.5em; 
-  color: rgb(12, 1, 41);
+  color: #ff0000;
   font-family: 'Bebas Neue', cursive;
-};
+}
 
 .container {
   display: flex;
@@ -71,7 +71,7 @@
 .event h2 {
   margin: 0;
   font-size: 1.5em;
-  color:black;
+  color: black;
 }
 
 /* Tablet and Smaller Desktop */
