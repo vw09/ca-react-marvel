@@ -21,14 +21,14 @@ const Characters = () => {
       <h1>The Chronicles of Marvel</h1>
       <div className={styles.container}>
         <div className={styles.eventsContainer}>
-          {sortedCharacters.map(character => (
-            <div key={character.id} className={styles.ballsContainer}>
-              <div className={styles.ball}></div>
-              <div onClick={() => onSelectCharacter(character)} className={styles.event}>
-                <h2>{character.name}</h2>
-              </div>
-            </div>
-          ))}
+        {sortedCharacters.map(character => (
+  <div key={character.id} className={styles.ballsContainer}>
+    <div className={styles.ball}></div>
+    <div onClick={() => onSelectCharacter(character)} className={styles.event}>
+      <h2>{character.name}</h2>
+    </div>
+  </div>
+))}
         </div>
       </div>
     </div>

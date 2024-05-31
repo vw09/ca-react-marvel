@@ -24,7 +24,7 @@ const CharacterId = () => {
       <div className={styles.comicsBlock}>
         <h2 className={styles.comicsTitle}>Comics</h2>
         <div>
-          {character.comics.items.map((comic) => {
+          {character?.comics?.items?.map((comic) => {
             return <div key={comic.resourceURI}>{comic.name}</div>;
           })}
         </div>
