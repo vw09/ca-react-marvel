@@ -1,14 +1,16 @@
-import fetcher from "./_fetcher"
-import useSWR from "swr"
-import {apiKey} from "../secret"
+// data/events3.js
 
-export default function useCharacter (id) {
-    const { data, error, isLoading } = useSWR(`https://gateway.marvel.com:443/v1/public/characters${id}?apikey=${apiKey}`, fetcher)
-   
-    return {
-      data,
-      isLoading,
-      isError: error
-    }
-  }
+import useSWR from "swr";
+import fetcher from "./_fetcher";
 
+const apiKey = "a437d6abb4a57dbbf98e7794596a8677";
+
+export default function useCharacters() {
+  const { data, error } = useSWR(`https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}`, fetcher);
+
+  return {
+    characters: data ? data.data.results : [],
+    isLoading: !error && !data,
+    isError: error,
+  };
+}

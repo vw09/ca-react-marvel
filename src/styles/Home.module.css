@@ -1,6 +1,6 @@
 .main {
   background: url("/background3.png");
-  background-size: contain;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
