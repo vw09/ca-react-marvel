@@ -1,6 +1,6 @@
 // src/pages/_app.js
-import "@/styles/globals.css";
-import BottomNav from "@/components/Navigation";
+import "../styles/globals.css";
+import BottomNav from "../components/Navigation";
 
 export default function App({ Component, pageProps }) {
   return (

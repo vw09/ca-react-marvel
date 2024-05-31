@@ -3,7 +3,7 @@ import React from 'react';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { Home, PeopleAlt } from '@mui/icons-material'; // Importeer de benodigde iconen
 import { useRouter } from 'next/router';
-import styles from '@/styles/Navigation.module.css';
+import styles from '../styles/Navigation.module.css';
 
 const BottomNav = () => {
   const [value, setValue] = React.useState(0);
