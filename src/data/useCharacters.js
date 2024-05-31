@@ -1,13 +1,13 @@
-// In a new file, e.g., useCharacter.js
+
 import useSWR from "swr";
 import fetcher from "./_fetcher";
 import { apiKey } from "../secret";
 
-export default function useCharacters(id) {
-  const { data, error } = useSWR(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=${apiKey}`, fetcher);
+export default function useCharacters() {
+  const { data, error } = useSWR(`https://gateway.marvel.com:443/v1/public/characters?apikey=${apiKey}`, fetcher);
 
   return {
-    character: data && data.data ? data.data.results[0] : undefined,
+    Characters: data && data.data ? data.data.results : undefined,
     isLoading: !error && !data,
     isError: error,
   };
