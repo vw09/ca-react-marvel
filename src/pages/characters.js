@@ -1,7 +1,5 @@
-// pages/index.js
-
 import React from 'react';
-import useCharacters from '../data/events3';
+import useCharacters from '@/data/events3'; // Gebruik de juiste hook
 import styles from '@/styles/Home.module.css';
 import { useRouter } from 'next/router';
 
@@ -10,8 +8,9 @@ const Characters = () => {
   const { characters, isLoading, isError } = useCharacters();
 
   const onSelectCharacter = (character) => {
-    router.push(`/characters/${character.id}`);
+    router.push(`/detail/${character.id}`); // Zorg ervoor dat je character.id gebruikt
   };
+
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error</div>;
