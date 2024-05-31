@@ -8,7 +8,7 @@ const Characters = () => {
   const { characters, isLoading, isError } = useCharacters();
 
   const onSelectCharacter = (character) => {
-    router.push(`/detail/${character.id}`); // Zorg ervoor dat je character.id gebruikt
+    router.push(`/detail/${characters.id}`); // Zorg ervoor dat je character.id gebruikt
   };
 
 

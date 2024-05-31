@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import useCharacter from '@/data/event'; // Gebruik de juiste hook
+import useCharacter from '@/data/events3'; // Gebruik de juiste hook
 import styles from '@/styles/Detail.module.css';
 
 const CharacterDetailPage = () => {
   const router = useRouter();
-  const { data, isLoading, isError } = useCharacter(router.query.charactersid); // Zorg ervoor dat je de juiste ID doorgeeft
+  const { data, isLoading, isError } = useCharacter(router.query.id); // Zorg ervoor dat je de juiste ID doorgeeft
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error</div>;
