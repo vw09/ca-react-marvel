@@ -3,11 +3,11 @@ import useSWR from "swr";
 import fetcher from "./_fetcher";
 import { apiKey } from "../secret";
 
-export default function useCharacter(id) {
+export default function useCharacters(id) {
   const { data, error } = useSWR(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=${apiKey}`, fetcher);
 
   return {
-    character: data ? data.data.results[0] : undefined,
+    character: data && data.data ? data.data.results[0] : undefined,
     isLoading: !error && !data,
     isError: error,
   };
