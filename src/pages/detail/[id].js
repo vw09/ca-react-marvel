@@ -18,19 +18,19 @@ const Index2 = () => {
       <button className={styles.backButton} onClick={() => router.back()}>
         Terug
       </button>
-      <h1>{data.data.results[0].title}</h1>
-      <div className={styles.descriptionBlock}>
-        <h2 className={styles.descriptionTitle}>Description</h2>
-        <p>{data.data.results[0].description}</p>
-      </div>
-      <div className={styles.charactersBlock}>
-        <h2 className={styles.charactersTitle}>Characters</h2>
-        <div>
-          {data.data.results[0].characters.items.map((char) => {
-            return <div key={char.resourceURI}>{char.name}</div>;
-          })}
-        </div>
-      </div>
+      <h1>{data?.data?.results?.[0]?.title}</h1>
+<div className={styles.descriptionBlock}>
+  <h2 className={styles.descriptionTitle}>Description</h2>
+  <p>{data?.data?.results?.[0]?.description}</p>
+</div>
+<div className={styles.charactersBlock}>
+  <h2 className={styles.charactersTitle}>Characters</h2>
+  <div>
+    {data?.data?.results?.[0]?.characters?.items?.map((char) => {
+      return <div key={char.resourceURI}>{char.name}</div>;
+    })}
+  </div>
+</div>
     </div>
   );
 };

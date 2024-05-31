@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import useCharacter from '@/data/events3'; // Gebruik de juiste hook
 import styles from '@/styles/Detail.module.css';
+import useCharacters from '@/data/useCharacters'; // Import the new hook
 
 const CharacterDetailPage = () => {
   const router = useRouter();
-  const { data, isLoading, isError } = useCharacter(router.query.id); // Zorg ervoor dat je de juiste ID doorgeeft
+  const { character, isLoading, isError } = useCharacter(router.query.id); // Use the new hook
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error</div>;
@@ -15,15 +15,15 @@ const CharacterDetailPage = () => {
       <button className={styles.backButton} onClick={() => router.back()}>
         Terug
       </button>
-      <h1>{data.data.results[0].name}</h1> {/* Gebruik de juiste eigenschappen van het karakter */}
+      <h1>{character?.name}</h1> {/* Use the character object */}
       <div className={styles.descriptionBlock}>
         <h2 className={styles.descriptionTitle}>Beschrijving</h2>
-        <p>{data.description}</p>
+        <p>{character?.description}</p>
       </div>
       <div className={styles.charactersBlock}>
         <h2 className={styles.charactersTitle}>Characters</h2>
         <div>
-          {data.data.results[0].description((char) => ( // Zorg ervoor dat je de juiste eigenschappen van het karakter gebruikt
+          {character?.description?.((char) => ( // Use the character object
             <div key={char.resourceURI}>{char.name}</div>
           ))}
         </div>

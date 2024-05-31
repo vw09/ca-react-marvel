@@ -1,14 +1,14 @@
 import React from 'react';
-import useCharacters from '@/data/events3'; // Gebruik de juiste hook
+import useCharacter from '@/data/useCharacter';
 import styles from '@/styles/Home.module.css';
 import { useRouter } from 'next/router';
 
-const Characters = () => {
+const Character = () => {
   const router = useRouter();
-  const { characters, isLoading, isError } = useCharacters();
+  const { characters, isLoading, isError } = useCharacter();
 
   const onSelectCharacter = (character) => {
-    router.push(`/detail/${characters.id}`); // Zorg ervoor dat je character.id gebruikt
+    router.push(`/detail/${character.id}`); // Zorg ervoor dat je character.id gebruikt
   };
 
 
@@ -34,4 +34,4 @@ const Characters = () => {
   );
 };
 
-export default Characters;
+export default Character;
